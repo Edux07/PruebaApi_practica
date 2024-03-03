@@ -5,25 +5,45 @@ import com.example.Repository.VideoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
-public class VideojuegoService{
-    @Autowired
+public class VideojuegoService implements VideoService{
+
     private VideoRepo videoRepo;
 
-    public Videojuego addVideojuego(Videojuego videojuego) {
-        return videoRepo.save(videojuego);
-    }
-    public Videojuego getVideojuego(Long id) {
-        return videoRepo.findByID(id);
-    }
-    public void deleteVideojuego(Long id) {
-        videoRepo.deleteById(id);
-    }
-    public Videojuego updateVideojuego(Long id, Videojuego videojuego) {
-        videojuego.setId(id);
-        return videoRepo.save(videojuego);
+    public VideojuegoService(VideoRepo videoRepo) {
+        this.videoRepo = videoRepo;
     }
 
+    @Override
+    public List<Videojuego> findAll() {
+        return null;
+    }
 
+    @Override
+    public Videojuego findById(Long id) {
+        return null;
+    }
 
+    @Override
+    public Optional<Videojuego> findByName(String name) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Videojuego save(Videojuego videojuego) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
+    }
 }
