@@ -11,9 +11,10 @@ public class PruebaApiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ac = SpringApplication.run(PruebaApiApplication.class, args);
-		var videojuego = ac.getBean(VideoRepo.class);
+		 var repo = ac.getBean(VideoRepo.class);
+		 repo.save(new Videojuego("Mario", "Nintendo", "Plataformas"));
 
-		videojuego.save(new Videojuego("The Legend of Zelda: Breath of the Wild", "Nintendo", "Aventura"));
+
 	}
 
 }
