@@ -12,6 +12,7 @@ public class Controlador {
     @Autowired
     private VideoRepo VideoRepo;
 
+    //localhost:8080/api/videojuego
     @GetMapping("/videojuego/{id}")
     public ResponseEntity<Videojuego> BuscarVideojuegoID(@PathVariable long id){
         Videojuego videojuego = VideoRepo.findByID(id);
